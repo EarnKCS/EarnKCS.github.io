@@ -1689,7 +1689,7 @@ document.getElementById("searchbarbutton").onclick = function () {
         console.log(responseText);
 	var testcondition = JSON.stringify(responseText);
 	console.log("testcondition is" + testcondition);
-        if (testcondition != '') {
+        if (testcondition != '{}\n') {
           const myObj = JSON.parse(responseText);
           htmlelement = myObj["message"];
           $("#updateme").html(htmlelement);
