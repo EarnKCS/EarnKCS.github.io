@@ -394,7 +394,7 @@ Stay tuned and make sure to hodl your EarnKCS to support the team in developing 
 
 `;
 
-document.getElementById("searchbarbutton").onclick = function () {
+document.getElementsByClassName("searchbarbutton")[0].onclick = function () {
   if (1==1) {
     if (isHex(document.getElementById("searchbarinput").value)) {
       document.getElementById("searchbarbutton").disabled = true;
