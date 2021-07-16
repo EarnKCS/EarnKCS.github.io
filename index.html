@@ -1687,8 +1687,9 @@ document.getElementById("searchbarbutton").onclick = function () {
       // Handle the response
       let onSuccess = function (responseText) {
         console.log(responseText);
-		emptyjson = {};
-        if (responseText != emptyjson) {
+	var testcondition = JSON.stringify(responseText);
+	console.log("testcondition is" + testcondition);
+        if (testcondition != '') {
           const myObj = JSON.parse(responseText);
           htmlelement = myObj["message"];
           $("#updateme").html(htmlelement);
