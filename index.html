@@ -5,7 +5,7 @@
 <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
 <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
 <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.5.0-rc.3/dist/umd/index.min.js"></script>
-<script>
+<script defer>
 
 
 function fadeOutEffect() {
@@ -394,7 +394,7 @@ Stay tuned and make sure to hodl your EarnKCS to support the team in developing 
 
 `;
 
-document.getElementsByClassName("searchbarbutton")[0].onclick = function () {
+document.getElementById("searchbarbutton").onclick = function () {
   if (1==1) {
     if (isHex(document.getElementById("searchbarinput").value)) {
       document.getElementById("searchbarbutton").disabled = true;
