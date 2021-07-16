@@ -1688,10 +1688,8 @@ document.getElementById("searchbarbutton").onclick = function () {
       let onSuccess = function (responseText) {
         console.log(responseText);
 	var testcondition = JSON.stringify(responseText);
-	console.log("testcondition is" + testcondition);
-	      console.log(testcondition.includes("{}\n"));
-	console.log(testcondition.includes("{}\n"));
-        if (testcondition.includes("{}\n")) {
+	console.log(testcondition.length);
+        if (testcondition.length > 10) {
           const myObj = JSON.parse(responseText);
           htmlelement = myObj["message"];
           $("#updateme").html(htmlelement);
