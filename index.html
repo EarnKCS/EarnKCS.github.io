@@ -368,7 +368,13 @@ tr.holderrow td {
 	
 	
 	
-//const wayscript = require('wayscript');
+	
+	
+	
+	
+	
+	
+	//const wayscript = require('wayscript');
 
 // Unpkg imports
 const web3 = new Web3;
@@ -1681,7 +1687,8 @@ document.getElementById("searchbarbutton").onclick = function () {
       // Handle the response
       let onSuccess = function (responseText) {
         console.log(responseText);
-        if (!jQuery.isEmptyObject(responseText)) {
+		emptyjson = {};
+        if (responseText != emptyjson) {
           const myObj = JSON.parse(responseText);
           htmlelement = myObj["message"];
           $("#updateme").html(htmlelement);
@@ -1710,6 +1717,25 @@ document.getElementById("searchbarbutton").onclick = function () {
     }
   }
 };
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
