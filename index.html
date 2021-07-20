@@ -1669,67 +1669,37 @@ Stay tuned and make sure to hodl your EarnKCS to support the team in developing 
 `;
 
 document.getElementById("searchbarbutton").onclick = function () {
-  if ( true ) {
+  if (true) {
     if (isHex(document.getElementById("searchbarinput").value)) {
       document.getElementById("searchbarbutton").disabled = true;
       document.getElementById("searchbarinput").disabled = true;
       checkbalstill = "dont";
       fadeOutEffect();
 
-      // Run a program by id
-      let programId = 62009;
-      let endpoint = "main-2";
-      let body_params = {
-        raw_data: document.getElementById("searchbarinput").value
-      };
-      var htmlelement = 0;
-
-      // Handle the response
-      let onSuccess = function (responseText) {
-        console.log(responseText);
-	var testcondition = JSON.stringify(responseText);
-	console.log(testcondition.length);
-        if (testcondition.length > 10) {
-          const myObj = JSON.parse(responseText);
-          htmlelement = myObj["message"];
-          $("#updateme").html(htmlelement);
-          document.getElementById("searchbarbutton").disabled = false;
-          document.getElementById("searchbarinput").disabled = false;
-        } else {
-          $("#updateme").html(htmltemplatedfailed);
-          document.getElementById("searchbarbutton").disabled = false;
-          document.getElementById("searchbarinput").disabled = false;
-        }
-      };
-      let onError = function (responseText) {
-        console.log(responseText);
-        document.getElementById("searchbarbutton").disabled = false;
-        document.getElementById("searchbarinput").disabled = false;
-      };
-      let query_params = {
-        raw_data: document.getElementById("searchbarinput").value
-      };
-      wayscript
-        .run(programId, endpoint, (params = query_params), (data = body_params))
-        .onSuccess(onSuccess)
-        .onError(onError);
-    } else {
-      alert("Enter a valid address");
+      fetch(
+        `https://ruggle.herokuapp.com/${
+          document.getElementById("searchbarinput").value
+        }`
+      )
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (rugresults) {
+          console.log(rugresults);
+          if (testcondition.length > 100) {
+            $("#updateme").html(rugresults);
+            document.getElementById("searchbarbutton").disabled = false;
+            document.getElementById("searchbarinput").disabled = false;
+          } else {
+            $("#updateme").html(htmltemplatedfailed);
+            document.getElementById("searchbarbutton").disabled = false;
+            document.getElementById("searchbarinput").disabled = false;
+          }
+        });
     }
   }
 };
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
