@@ -1683,10 +1683,10 @@ document.getElementById("searchbarbutton").onclick = function () {
         .then(function (response) {
           return response.text();
         })
-        .then(function (rugresults) {
-          console.log(rugresults);
-          if (testcondition.length > 100) {
-            $("#updateme").html(rugresults);
+        .then(function (text) {
+          console.log(text);
+          if (text.length > 100) {
+            $("#updateme").html(text);
             document.getElementById("searchbarbutton").disabled = false;
             document.getElementById("searchbarinput").disabled = false;
           } else {
