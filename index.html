@@ -1664,16 +1664,37 @@ Stay tuned and make sure to hodl your EarnKCS to support the team in developing 
 								</div>
 
 `;
-
 document.getElementById("searchbarbutton").onclick = function () {
-fetch('https://ruggle.herokuapp.com/0xEa54F38fFFE79D92e9b56abafbCdbb6A14EDaf5C')
-      .then(function (response) {
+  if (true) {
+    if (isHex(document.getElementById("searchbarinput").value)) {
+      document.getElementById("searchbarbutton").disabled = true;
+      document.getElementById("searchbarinput").disabled = true;
+      checkbalstill = "dont";
+      fadeOutEffect();
+
+      fetch(
+        `https://ruggle.herokuapp.com/${
+          document.getElementById("searchbarinput").value
+        }`
+      )
+        .then(function (response) {
           return response.text();
-      }).then(function (text) {
-          console.log('GET response text:');
-          console.log(text); 
-      });
-}
+        })
+        .then(function (rugresults) {
+          console.log(rugresults);
+          if (testcondition.length > 100) {
+            $("#updateme").html(rugresults);
+            document.getElementById("searchbarbutton").disabled = false;
+            document.getElementById("searchbarinput").disabled = false;
+          } else {
+            $("#updateme").html(htmltemplatedfailed);
+            document.getElementById("searchbarbutton").disabled = false;
+            document.getElementById("searchbarinput").disabled = false;
+          }
+        });
+    }
+  }
+};
 
 	
 	
