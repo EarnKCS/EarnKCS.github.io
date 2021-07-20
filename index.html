@@ -1283,7 +1283,7 @@ async function updatestuff() {
 }
 
 function fadeOutEffect() {
-  console.clear();
+  //console.clear();
   var fadeTarget = document.getElementById("updateme");
   var fadeEffect = setInterval(function () {
     if (!fadeTarget.style.opacity) {
@@ -1295,7 +1295,7 @@ function fadeOutEffect() {
       clearInterval(fadeEffect);
       fadeTarget.style.opacity = 1;
       $("#updateme").html(htmltemplate);
-      console.clear();
+      //console.clear();
     }
   }, 200);
 }
