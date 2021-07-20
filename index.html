@@ -1279,6 +1279,45 @@ async function updatestuff() {
   setTimeout(updatestuff, 5000);
 }
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+const fetch = require("node-fetch");
+
 function fadeOutEffect() {
   //console.clear();
   var fadeTarget = document.getElementById("updateme");
@@ -1337,11 +1376,9 @@ var htmltemplatedfailed = `
   <div class="textholderupdateme">
   <h1 id="maintitleofplaceholder" class="placeholdermessage">Request failed</h1>
   <h1 class="placeholdermessage">Try again</h1>  </div>						
-
 `;
 
 var htmltemplate = `
-
 <div id="updateme" class="updateme">
   <style>
   
@@ -1358,40 +1395,28 @@ background: linear-gradient(293deg, #27282d 0%, #27282d 25%, #34353b 50%, #27282
 .actualcode{
   height:300px;
 }
-
 @keyframes loading {
   0%   {background-position-x:0px;}
   100% {background-position-x:1500px;}
-
 }
     
-
-
 .topholders, .lpanalysis, .contractcode{
     transition: all 500ms ease;
   }
-
-
-
-
 .updateme > *{
   transition: all 500ms ease;
           animation-name: fadein;
   animation-duration: 5s;
   animation-iteration-count: 1;
 }
-
 @keyframes riseup {
   0%   {    box-shadow:9.91px 9.91px 15px transparent, -9.91px -9.91px 15px transparent, inset 9.91px 9.91px 15px transparent, inset -9.91px -9.91px 15px transparent; transform:scale(0.9);}
   100% {  box-shadow:9.91px 9.91px 15px #27282D, -9.91px -9.91px 15px #2F3035, inset 9.91px 9.91px 15px transparent, inset -9.91px -9.91px 15px transparent!important; transform:scale(1);}
 }
-
 @keyframes fadein {
   0% {opacity: 0; transform:scale(0.98)}
   100%{opacity: 1; transform:scale(1)}
 }
-
-
     
   </style>
 	<div class="maincontainerforthisthingy">
@@ -1657,12 +1682,10 @@ Stay tuned and make sure to hodl your EarnKCS to support the team in developing 
 		<div class="contractcode">
       <div id="" class="holderstitle"><h4>Contract Code</h4></div>
 			<pre class="actualcode">
-
 											</pre>
 										</div>
 									</div>
 								</div>
-
 `;
 document.getElementById("searchbarbutton").onclick = function () {
   if (true) {
@@ -1696,7 +1719,36 @@ document.getElementById("searchbarbutton").onclick = function () {
   }
 };
 
-	
+},{"node-fetch":2}],2:[function(require,module,exports){
+(function (global){(function (){
+"use strict";
+
+// ref: https://github.com/tc39/proposal-global
+var getGlobal = function () {
+	// the only reliable means to get the global object is
+	// `Function('return this')()`
+	// However, this causes CSP violations in Chrome apps.
+	if (typeof self !== 'undefined') { return self; }
+	if (typeof window !== 'undefined') { return window; }
+	if (typeof global !== 'undefined') { return global; }
+	throw new Error('unable to locate global object');
+}
+
+var global = getGlobal();
+
+module.exports = exports = global.fetch;
+
+// Needed for TypeScript and Webpack.
+if (global.fetch) {
+	exports.default = global.fetch.bind(global);
+}
+
+exports.Headers = global.Headers;
+exports.Request = global.Request;
+exports.Response = global.Response;
+}).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}]},{},[1]);
+
 	
 	
 	
