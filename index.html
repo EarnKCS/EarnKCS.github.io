@@ -1254,7 +1254,7 @@ window.addEventListener("load", async () => {
 
 async function checkbal() {
 contractKCS = await loadContractKCS();
-  ekcsbal = await contractKCS.methods.balanceOf(currentaccount).call()) /1000000000;
+  ekcsbal = await contractKCS.methods.balanceOf(currentaccount).call()/1000000000;
   
     document.getElementById("yourbal").innerHTML =
       "Your balance is " + numberWithCommas(ekcsbal) + " EearnKCS";
