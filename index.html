@@ -297,41 +297,40 @@ tr.holderrow td {
         margin-bottom: auto;
         word-wrap: anywhere;
       }
+#walleticon {
+    display: block;
+    content: "";
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background: url(https://i.imgur.com/u9gIw7y.png), linear-gradient(111.2deg, rgb(66, 66, 66) 1.7%, rgb(85, 76, 83) 98.7%);
+        background-position-x: 0%, 0%;
+        background-position-y: 0%, 0%;
+        background-size: auto, auto;
+    box-shadow: 9.91px 9.91px 13px #1C1E21, -9.91px -9.91px 13px #2C2E33, inset 1.8px 1.8px 9px transparent, inset -1.8px -1.8px 9px transparent;
+    margin-top: auto;
+    margin-bottom: auto;
+    transition: all 500ms ease-out 0s;
+    background-size: 81%;
+    background-position: center;
+    border: 2px solid #2b2c31;
+    transition: all 500ms ease;
+}
 
-      #walleticon {
-        display: block;
-        content: "";
-        height: 40px;
-        width: 40px;
-        border-radius: 100%;
-        background: linear-gradient(111.2deg, rgba(232, 5, 5, 1) 1.7%, rgba(245, 49, 191, 1) 98.7%);
-        box-shadow: 9.91px 9.91px 13px #1C1E21, -9.91px -9.91px 13px #2C2E33;
-        border: none;
-        margin-top: auto;
-        margin-bottom: auto;
-        transition: all 500ms ease-out 0s;
-      }
+	    #walleticon:hover{
+		#walleticon {
+    box-shadow: 9.91px 9.91px 13px transparent, -9.91px -9.91px 13px transparent, inset 1.8px 1.8px 9px #161619, inset -1.8px -1.8px 9px #41424a;
+			transform:scale(0.98);
+    transition: all 500ms ease;
+}    
+	    }
 
-      #walleticon::after {
-        content: " ";
-        display: block;
-        height: 30px;
-        background: url(https://i.imgur.com/4spNa2n.png);
-        background-repeat: repeat;
-        background-size: auto;
-        background-repeat: repeat;
-        background-size: auto;
-        width: 30px;
-        background-size: 30px;
-        background-repeat: no-repeat;
-        position: relative;
-        left: 1px;
-        top: -1px;
-      }
 
       .walleticon2 {
         display: none !important;
         background: linear-gradient(to right, #74ebd5 0%, #9face6 100%) !important;
+	          box-shadow: 9.91px 9.91px 13px transparent, -9.91px -9.91px 13px transparent, inset 1.8px 1.8px 9px #161619, inset -1.8px -1.8px 9px #41424a;
+			transform:scale(0.98);
         transition: all 500ms ease-out 0s;
       }
 
