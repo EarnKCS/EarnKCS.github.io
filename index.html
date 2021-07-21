@@ -1253,8 +1253,8 @@ window.addEventListener("load", async () => {
 });
 
 async function checkbal() {
-	window.contractKCS = await loadContractKCS();
-  ekcsbal = await window.contractKCS.methods.balanceOf(currentaccount).call()) /1000000000;
+contractKCS = await loadContractKCS();
+  ekcsbal = await contractKCS.methods.balanceOf(currentaccount).call()) /1000000000;
   
     document.getElementById("yourbal").innerHTML =
       "Your balance is " + numberWithCommas(ekcsbal) + " EearnKCS";
@@ -1263,7 +1263,7 @@ async function checkbal() {
 
 //Load contract
 async function loadContractKCS() {
-  const wweb3 = new Web3(provider);
+  const wweb3 = new Web3(new Web3.providers.HttpProvider('https://rpc-mainnet.kcc.network'));
   const MyContract = new wweb3.eth.Contract(KCScontractAbi, KCScontractAddress);
   return MyContract;
 }
@@ -1274,7 +1274,7 @@ function numberWithCommas(x) {
 
 async function updatestuff() {
   checkbal();
-  setTimeout(updatestuff, 5000);
+  setTimeout(updatestuff, 1000);
 }
 
 function fadeOutEffect() {
