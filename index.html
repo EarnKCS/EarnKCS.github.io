@@ -1303,44 +1303,6 @@ function isHex(num) {
 
 var re = /[0-9A-Fa-f]{6}/g;
 
-var htmltemplatedfailed = `
-<div id="updateme" class="updateme">
-	
-      <style>
-      
-        #updateme{
-          height:2087px;
-                    transition: all 500ms ease;
-          opacity:0.9;
-        }
-        
-        .placeholdermessage{
-          color:white;
-           margin:auto;
-          width:max-content;
-          font-weight:normal!important;
-          margin-top:15px;
-          transition: all 500ms ease;
-        }
-        
-        #maintitleofplaceholder{
-          margin-bottom:50px;
-          font-weight:bold!important;
-          transition: all 500ms ease;
-        }
-        
-        .textholderupdateme{
-          height:max-content;
-          margin-top:200px;
-                    transition: all 500ms ease;
-        }
-  </style> 
-  <div class="textholderupdateme">
-  <h1 id="maintitleofplaceholder" class="placeholdermessage">Request failed</h1>
-  <h1 class="placeholdermessage">Try again</h1>  </div>						
-
-`;
-
 var htmltemplate = `
 
 <div id="updateme" class="updateme">
