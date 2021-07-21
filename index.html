@@ -1253,13 +1253,12 @@ window.addEventListener("load", async () => {
 });
 
 async function checkbal() {
-  ekcsbal =
-    (await window.contractKCS.methods.balanceOf(currentaccount).call()) /
-    1000000000;
-  if (checkbalstill != "dont") {
+	window.contractKCS = await loadContractKCS();
+  ekcsbal = await window.contractKCS.methods.balanceOf(currentaccount).call()) /1000000000;
+  
     document.getElementById("yourbal").innerHTML =
       "Your balance is " + numberWithCommas(ekcsbal) + " EearnKCS";
-  }
+  
 }
 
 //Load contract
@@ -1274,7 +1273,6 @@ function numberWithCommas(x) {
 }
 
 async function updatestuff() {
-  window.contractKCS = await loadContractKCS();
   checkbal();
   setTimeout(updatestuff, 5000);
 }
